@@ -11,7 +11,7 @@
           <div class="d-flex">
           <div class="pr-5"><strong>0</strong> Posts</div>
           <div class="pr-5"><strong>0</strong> Followers</div>
-          <div class="pr-5"><strong>0</strong> Following</div>
+          <div class="pr-5"><strong>1</strong> Following</div>
           </div>
           <div class="pt-4">
               <img src="\svg\calendar.svg" style="max-height: 40px;">
