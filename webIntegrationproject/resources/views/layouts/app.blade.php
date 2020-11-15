@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,10 +27,10 @@
     </div>
     <div>
         <div class="pl-2">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            <div><img src="\svg\Tweetogram.svg" style="max-height: 120px;" class="pr-3"></div>
-            <div>TweetoGram</div>
-        </a>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <div><img src="\svg\Tweetogram.svg" style="max-height: 120px;" class="pr-3"></div>
+                <div>TweetoGram</div>
+            </a>
         </div>
         <nav id="sidebar">
             <!-- Sidebar Header -->
@@ -39,9 +40,9 @@
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -79,26 +80,30 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-                            <ul class="navbar-nav ml-auto list-unstyled components ">
-                                <!-- Authentication Links -->
-                                <li class="nav-item">
+                        </li>
+                        <ul class="navbar-nav ml-auto list-unstyled components ">
+                            <!-- Authentication Links -->
+                            <li class="nav-item">
                                 <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Profile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('posts.create') }}">New TG</a>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/about') }}" class="text-sm text-gray-700 underline">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('posts.create') }}">New TG</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-                                </li>
-                            </ul>
+                                        {{ __('Logout') }}
+                                    </a>
+                            </li>
+                        </ul>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                 </div>
                 </li>
                 @endguest
@@ -111,6 +116,7 @@
         @yield('content')
     </main>
     </div>
+    <script src=""
 </body>
 
 </html>

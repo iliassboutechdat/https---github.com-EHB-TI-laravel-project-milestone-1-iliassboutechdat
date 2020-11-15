@@ -22,3 +22,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/posts{post}', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 Route::resource('posts',\App\Http\Controllers\PostController::class);
 
+Route::get('/about', function() {
+    return view('about');
+});
