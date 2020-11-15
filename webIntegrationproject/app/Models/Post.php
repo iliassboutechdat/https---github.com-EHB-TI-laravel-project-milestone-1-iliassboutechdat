@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    //post
     use HasFactory;
 
     public function likes(){
