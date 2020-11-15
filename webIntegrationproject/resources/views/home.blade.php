@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container">
+    <form action="{{route('post.create')}}" method="POST">
+    @csrf
+    <div class="form-group">
+    <label for="">Example textarea</label>
+    <textarea class="form-control" id="" rows="3"></textarea>
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <input type="hidden" value="{{ Session::token() }}" name="_token">
+    </form>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
