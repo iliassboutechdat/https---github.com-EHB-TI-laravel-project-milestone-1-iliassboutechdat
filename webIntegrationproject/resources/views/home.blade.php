@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{route('post.create')}}" method="POST">
+    <form>
     @csrf
     <div class="form-group">
     <label for="">Example textarea</label>

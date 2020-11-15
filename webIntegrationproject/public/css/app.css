@@ -7,6 +7,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+ #background{
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;

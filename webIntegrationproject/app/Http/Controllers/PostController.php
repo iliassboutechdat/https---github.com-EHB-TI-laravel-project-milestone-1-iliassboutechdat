@@ -8,14 +8,24 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>['index','show']]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     { 
-        //
-        $posts = Post::all();
+        // 
+        $posts = Post::OrderBy('created_at','desc')->get();
         return view('posts.index', ['posts'=>$posts]);
     }
 

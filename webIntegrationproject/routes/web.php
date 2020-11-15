@@ -19,4 +19,5 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'index'])->name('in
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/createpost',['uses'=>'App\Http\Controllers\PostController@postCreatePost', 'as'=>'post.create']);
+Route::resource('posts',\App\Http\Controllers\PostController::class);
+

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<body>
+<div style="background-image: url('/images/bluegradientbackground.jpg')" id="background">
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         @if (Route::has('login'))
@@ -20,7 +20,7 @@
         @endif
 
         <div class="container">
-            <form action="{{route('post.create')}}" method="POST">
+            <form>
                 @csrf
                 <div class="form-group">
                     <label for="">What's happening?</label>
@@ -31,23 +31,25 @@
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
         </div>
-<br>
-            <div class="row justify-content-center mt-2">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">{{_('Tweetograms')}}</div>
-                        <div class="card-body">
+        <div class="row justify-content-center mt-2">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{_('Tweetograms')}}</div>
+                    <div class="card-body">
                         @foreach($posts as $post)
                         <div>
-                          <h2 class="post_title">{{$post->title}}</h2>
-                          <h4 class="post_content">{{$post->content}}</h4>
-                          <h5 class="post_author">Posted by "@"{{$post->author->username}}</h5>
-                          <p class="post_date"><i>{{$post->created_at}}<i><p>
+                            <h2 class="post_title">{{$post->title}}</h2><br>
+                            <h4 class="post_content float-right">{{$post->content}}</h4><br>
+                            <h6 class="post_author">Posted by &#64{{$post->author->username}}</h5>
+                                <p class="post_date"><i>at {{$post->created_at}}<i>
+                                            <p>
                         </div>
                         @endforeach
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</body>
 @endsection
