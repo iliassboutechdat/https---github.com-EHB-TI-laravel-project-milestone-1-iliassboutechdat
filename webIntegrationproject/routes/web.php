@@ -19,5 +19,6 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'index'])->name('in
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/posts{post}', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 Route::resource('posts',\App\Http\Controllers\PostController::class);
 
