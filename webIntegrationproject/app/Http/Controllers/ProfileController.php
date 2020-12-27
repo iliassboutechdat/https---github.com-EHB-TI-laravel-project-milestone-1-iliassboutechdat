@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class HomeController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -15,6 +16,16 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
+    
+    public function show($username){
+        $user= \App\Models\User::whereUsername($username)->first();
+
+        if($user){
+            return view('profile')->withUser($user);
+        }else{
+            return redirect()->back();
+        }
+    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $username = User::find($username);
+        return view('profile');
     }
 }

@@ -18,10 +18,18 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'index'])->name('in
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile/{username}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 //Route::get('/posts{post}', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 Route::resource('posts',\App\Http\Controllers\PostController::class);
 
 Route::get('/about', function() {
     return view('about');
 });
+
+Route::get('/contact', function() {
+    return view('contact');
+});
+
+Route::post('/send-message',[App\Http\Controllers\ContactController::class,'sendEmail'])->name('contact.send');
+ 
+Route::get('/contact',[App\Http\Controllers\ContactController::class,'contact']);

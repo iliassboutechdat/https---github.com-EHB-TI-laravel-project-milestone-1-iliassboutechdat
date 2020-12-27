@@ -13,6 +13,75 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
  */
 
+
+
+#profilepicture{
+  opacity: 100%;
+
+}
+
+
+
+
+.footer{
+  background-color:black;
+  opacity: 100%;
+}
+#contentWrapper{
+  padding-top: 100px;
+}
+
+#contactus{
+  background-color: #70c3be;
+  letter-spacing: 2px;
+  }
+#contactus a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media (max-width: 575.98px) {
+
+  #contactus{padding-bottom: 800px;
+    padding-top: 40px;
+  }
+  #contactus .maps iframe{
+    width: 100%;
+    height: 450px;
+  }
+ }
+
+
+@media (min-width: 576px) {
+
+   #contactus{padding-bottom: 800px; padding-top: 40px;}
+
+   #contactus .maps iframe{
+     width: 100%;
+     height: 450px;
+   }
+ }
+
+@media (min-width: 768px) {
+
+  #contactus{padding-bottom: 350px; padding-top: 40px;}
+
+  #contactus .maps iframe{
+    width: 100%;
+    height: 850px;
+  }
+}
+
+@media (min-width: 992px) {
+  #contactus{padding-bottom: 200px; padding-top: 40px;}
+
+   #contactus .maps iframe{
+     width: 100%;
+     height: 700px;
+   }
+}
+
 body {
   font-size: 20px;
   color: #212529;
@@ -99,7 +168,7 @@ img::-moz-selection {
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
-  background-color: white;
+  background:linear-gradient(90deg, rgba(210,210,210,1) 0%, rgba(112,139,196,1) 41%, rgba(36,178,181,1) 60%);
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -125,8 +194,8 @@ img::-moz-selection {
 
 @media only screen and (min-width: 992px) {
   #mainNav {
-    border-bottom: 1px solid transparent;
-    background: transparent;
+    border-bottom: 10px solid transparent;
+    background: linear-gradient(90deg, rgba(255,252,228,1) 0%, rgba(47,179,201,1) 51%);
   }
   #mainNav .navbar-brand {
     padding: 10px 20px;
@@ -151,6 +220,7 @@ img::-moz-selection {
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    background-color: grey;
   }
   #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */

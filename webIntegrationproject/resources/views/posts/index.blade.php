@@ -1,11 +1,9 @@
+
 @extends('layouts.app')
+        @section('content')
 
-@section('content')
-
-
-
-
-        <div class="container">
+    <div class="container">
+        
             <form method="POST" action="{{ route('posts.store')}}">
                 @csrf
                 <div class="form-group card-header">What's happening?
