@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 
 class ProfileController extends Controller
@@ -16,11 +16,11 @@ class ProfileController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => [ 'show']]);
     }
     
     public function show($username){
-        $user= \App\Models\User::whereUsername($username)->first();
+        $user=\App\Models\User::whereUsername($username)->first();
 
         if($user){
             return view('profile')->withUser($user);
@@ -34,16 +34,14 @@ class ProfileController extends Controller
             $user = User::find(Auth::user()->id);
 
             if($user){
-                return view('user.edit')->withUser($user);
+                return view('editProfile')->withUser($user);
             }
             else{
                 return redirect()->back();
             }
-           
         } 
         else{
             return redirect()->back();
-
         }
     }
 
@@ -60,27 +58,20 @@ class ProfileController extends Controller
                     'avatar',
                     'bio' => 'required|min:5',
                     'name'=> 'required|min:2'
-    
                 ]);
-        
             }else {
                 $validate = $request->validate([
                     'username' => 'required|min:2',
                     'email' =>'required|email|unique:users'
     
                 ]);
-    
             }
-        
-     
             if($validate){
-                
-                $user->email = $request['email'];
+                $user->name = $request['name'];
                 $user->username = $request['username'];
+                $user->email = $request['email'];
                 $user->avatar = $request['avatar'];
                 $user->bio = $request['bio'];
-                $user->name = $request['name'];
-    
                 $user->save();
                 $request->session()->flash('success', 'Your details have been updated !');
             return redirect()->back();
