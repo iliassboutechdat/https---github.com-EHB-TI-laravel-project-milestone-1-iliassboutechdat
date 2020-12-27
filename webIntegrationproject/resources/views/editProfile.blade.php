@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <!--Button update-->
-                        <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
+                        <button type="submit" class="btn btn-primary" href="{{ route('profile.update') }}">{{ __('Update') }}</button>
                     </form>
                 </div>
             </div>
