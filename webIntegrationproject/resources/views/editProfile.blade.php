@@ -1,6 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -57,8 +82,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="form-group row">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">Choose Avatar</label>
 
@@ -66,13 +89,7 @@
                                 <input id="avatar" value="{{$user['avatar']}}" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
                             </div>
                         </div>
-
-
-                      
-                      
-
-
-                        
+  
                         <div class="form-group row">
                             <label for="bio" class="col-md-4 col-form-label text-md-right">{{ __('Bio') }}</label>
 
@@ -88,7 +105,7 @@
                         </div>
                           <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" href="{{ route('profile.update') }}">
                                     Save changes
                                 </button>
                             </div>
@@ -99,4 +116,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection

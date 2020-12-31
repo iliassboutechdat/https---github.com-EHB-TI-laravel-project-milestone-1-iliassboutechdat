@@ -23,11 +23,11 @@
 </head>
 
 <body>
-    <div class="pl-5">
+<div class="pl-5">
         
             
         
-    </div>
+        </div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div>
@@ -52,7 +52,6 @@
                     </li>
                     @endif
                     @if (Route::has('login'))
-
                     @auth
                     <li class="nav-item">
                         <a class="nav-link" href="/profile/{{ Auth::user()->username }}">My Profile</a>
@@ -71,6 +70,11 @@
                     @endif
                     @else
                     <!-- Authentication Links -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/search') }}">Search</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.create') }}">New TG</a>
                     </li>
@@ -104,9 +108,7 @@
                 @endguest
             </nav>
             </div>
-            
-        </div>
-
+</div>
         <div id="app">
         </div>
         <div>
@@ -114,6 +116,9 @@
                 @yield('content')
             </main>
         </div>
+
+        
+ 
 </body>
 
 </html>

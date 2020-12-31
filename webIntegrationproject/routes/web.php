@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Input;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\PostController::class, 'index'])->name('index');
+//Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('searchForm.search');
+//Route::get('/search/result', [App\Http\Controllers\SearchController::class, 'searchResult'])->name('searchForm.searchResult');
 
 
 Auth::routes();
@@ -27,6 +31,18 @@ Route::resource('posts',\App\Http\Controllers\PostController::class);
 
 Route::get('/about', function() {
     return view('about');
+});
+
+Route::get('/search', function() {
+    return view('searchForm.search');
+});
+
+Route::any('/search/result',function(){
+    $q = Request::get ( 'q' );
+    $user = User::where('username','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+    if(count($user) > 0)
+        return view('searchForm.searchResult')->withDetails($user)->withQuery ( $q );
+    else return view ('searchForm.searchResult')->withMessage('No Details found. Try to search again !');
 });
 
 Route::get('/contact', function() {
