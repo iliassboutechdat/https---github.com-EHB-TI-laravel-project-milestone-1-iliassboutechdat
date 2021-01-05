@@ -4,7 +4,7 @@
 
     <div class="container">
         
-            <form method="POST" action="{{ route('posts.store')}}">
+            <form method="POST" action="{{ route('posts.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group card-header">What's happening?
                 <label for="title"></label>
@@ -23,6 +23,11 @@
                                     </span>
                                 @enderror
             <br>
+
+                            <label for="postimage" class="col-md-4 col-form-label text-md-right"></label>
+                                <input id="postimage" type="file" name="postimage">
+                      
+
                     <button type="submit" class="btn btn-primary">Post</button>
                     <input type="hidden" value="{{ Session::token() }}" name="_token">
                 </div>

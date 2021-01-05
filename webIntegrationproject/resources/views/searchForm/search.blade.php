@@ -21,15 +21,29 @@
 </head>
 
 <body>
-<form action="/search/result" method="POST" role="search">
+<header class="masthead" style="background-image: url('images/search.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+          <form action="/search/result" method="POST" role="search" class="navbar-search">
     {{ csrf_field() }}
-    <div class="input-group" id="searchForm">
-        <input type="text" class="form-control" name="q"
+    <div class="" id="searchForm">
+        <input type="text" class="form-control search-query mb-3" name="q"
             placeholder="Search users"> <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
+            <button type="submit" class="btn btn-light ml-2">
                 <span class="glyphicon glyphicon-search">search</span>
             </button>
         </span>
     </div>
 </form>
+            <span class="subheading">Search for a user</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+ 
 </body>

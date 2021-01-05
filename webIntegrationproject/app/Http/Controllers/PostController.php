@@ -60,6 +60,11 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->user_id= Auth::user()->id;
+        if(request()->hasFile('postimage')){
+            $post->user_id= Auth::user()->id;
+            $post = request()->file('postimage')->getClientOriginalName();
+            request()->file('postimage')->storeAs('postimages',$post->user_id .'/' . $post,'');
+        }
         $post->save();
         return redirect('/posts');// posts/1
     }

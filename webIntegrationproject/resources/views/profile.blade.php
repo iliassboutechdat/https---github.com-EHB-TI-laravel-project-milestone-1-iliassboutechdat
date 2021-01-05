@@ -26,8 +26,11 @@
 </head>
 
 
-<header class="masthead" style="background-image: url('/storage/avatars/{{ $user->id }}/{{$user->avatar}}') ">
-<div class="container">
+<header class="masthead profilemasthead" style="background-image: url('/storage/avatars/{{ $user->id }}/{{$user->avatar}}'); ">
+<div class="container" style= "background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.5); 
+  color: white;
+  font-weight: bold;">
 
     <div class="row">
         <div class="col-3 p-5">
@@ -51,8 +54,12 @@
                 {{$user->bio}}</div>
             <div class="pb-2">
                 <img src="\svg\search.svg" style="max-height: 40px;">
-                <a href="#">{{$user->link}}</a></div>
-                <a href= "/edit/profile" class="btn btn-info mb-2">Change profile settings</a>
+                <a href="{{$user->link}}">{{$user->link}}</a></div>
+                @if (Route::has('login'))
+                @auth
+                <a href= "/edit/profile" class="btn btn-outline-light pl-5 pr-5 mb-3">Change profile settings</a>
+                @endif
+                @endif
         </div>
     </div>
     </header>
