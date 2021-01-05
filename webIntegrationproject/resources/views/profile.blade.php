@@ -58,7 +58,7 @@
     </header>
 </div>
 
-<div class="container d-flex mt-5  ml-5 postContent mb-2 ">
+<div class=" d-flex mt-5  ml-5 mr-5 postContent mb-2 ">
     <div class="post col-4">
         <p class="post-text pb-1">Ma nouvelle voiture ah chien!</p><br>
         <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.jpg?itok=ouf9g20f"

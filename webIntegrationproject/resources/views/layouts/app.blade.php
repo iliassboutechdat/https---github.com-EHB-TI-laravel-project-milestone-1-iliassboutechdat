@@ -23,18 +23,13 @@
 </head>
 
 <body>
-<div class="pl-5">
-        
-            
-        
-        </div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div>
             <a href="{{ url('/') }}" role="button" focusable="true" class="navbar-brand">
             <img alt="logo" src={{('\svg\Tweetogram.svg')}} style="max-height: 120px;" class="pr-3"></a>
             </div>
-        <div class="container">
+ 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -108,7 +103,7 @@
                 @endguest
             </nav>
             </div>
-</div>
+
         <div id="app">
         </div>
         <div>
