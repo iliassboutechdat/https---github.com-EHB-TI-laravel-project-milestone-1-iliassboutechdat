@@ -34,7 +34,8 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
-                        @csrf
+                    {{ csrf_field() }}
+                     {{ method_field('PUT')}}
 
                         @if(session('success'))
                         <div class='alert alert-success' role="alert">
@@ -105,7 +106,7 @@
                         </div>
                           <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" href="{{ route('profile.update') }}">
+                                <button type="submit" class="btn btn-primary"">
                                     Save changes
                                 </button>
                             </div>

@@ -39,9 +39,6 @@ class ProfileController extends Controller
             else{
                 return redirect()->back();
             }
-        } 
-        else{
-            return redirect()->back();
         }
     }
 
@@ -55,7 +52,7 @@ class ProfileController extends Controller
                 $validate = $request->validate([
                     'username' => 'required|min:2',
                     'email' =>'required|email',
-                    'avatar',
+                    'avatar'=>'required',
                     'bio' => 'required|min:5',
                     'name'=> 'required|min:2'
                 ]);
@@ -70,11 +67,17 @@ class ProfileController extends Controller
                 $user->name = $request['name'];
                 $user->username = $request['username'];
                 $user->email = $request['email'];
-                $user->avatar = $request['avatar'];
                 $user->bio = $request['bio'];
+                
+                if(request()->hasFile('avatar')){
+                    $avatar = request()->file('avatar')->getClientOriginalName();
+                    request()->file('avatar')->storeAs('avatars',$user->id .'/' . $avatar,'');
+                    $user->update(['avatar'=>$avatar]);
+                }
+
                 $user->save();
                 $request->session()->flash('success', 'Your details have been updated !');
-            return redirect()->back();
+                return view('profile')->withUser($user);
         }else {
             return redirect()->back();
         }

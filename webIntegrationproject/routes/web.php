@@ -24,11 +24,12 @@ Auth::routes();
 
 Route::get('/profile/{username}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 Route::get('/edit/profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
-Route::post('/update/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+Route::put('/update/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
 //Route::get('/posts{post}', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 Route::resource('posts',\App\Http\Controllers\PostController::class);
 
+        // via controller
 Route::get('/about', function() {
     return view('about');
 });

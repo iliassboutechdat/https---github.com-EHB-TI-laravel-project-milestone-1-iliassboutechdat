@@ -52,7 +52,7 @@
             <div class="pb-2">
                 <img src="\svg\search.svg" style="max-height: 40px;">
                 <a href="#">{{$user->link}}</a></div>
-                <button type="button" class="btn btn-info mb-2" href="{{ route('profile.edit') }}" >Change profile settings</button>
+                <a href= "/edit/profile" class="btn btn-info mb-2">Change profile settings</a>
         </div>
     </div>
     </header>
