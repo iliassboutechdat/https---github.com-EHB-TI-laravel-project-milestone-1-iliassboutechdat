@@ -85,6 +85,15 @@ class ProfileController extends Controller
         
     }
 
+    public function hasAvatar(){
+        $user = User::find(Auth::user()->id);
+
+        if($user->avatar !== null){
+            return true;
+        }else return false;
+
+    }
+
     /**
      * Show the application dashboard.
      *

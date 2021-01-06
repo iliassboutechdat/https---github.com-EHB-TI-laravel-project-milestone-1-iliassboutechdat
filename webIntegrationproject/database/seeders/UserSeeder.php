@@ -21,11 +21,11 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'username'=> 'Admin',
-            'email' => Str::random(10).'@gmail.com',
+            'email' => 'TweetogramAdmin@gmail.com',
             'birthday'=>'2020-12-12',
             'bio'=> 'Admin user',
             'link'=> 'https://www.erasmushogeschool.be/nl',
-            'password' => '123456',
+            'password' => bcrypt('123456'),
             'is_admin' => 1
         ]);
     }
