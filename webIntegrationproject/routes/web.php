@@ -26,7 +26,11 @@ Route::get('/profile/{username}', [App\Http\Controllers\ProfileController::class
 Route::get('/edit/profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/update/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
-//Route::get('/posts{post}', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
+
+Route::get('/faq', [App\Http\Controllers\FaqController::class, 'show'])->name('faq.show');
+Route::post('/faq/post', [App\Http\Controllers\FaqController::class, 'store'])->name('faqs.store');
+
+Route::get('/posts{post}', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 Route::resource('posts',\App\Http\Controllers\PostController::class);
 
         // via controller

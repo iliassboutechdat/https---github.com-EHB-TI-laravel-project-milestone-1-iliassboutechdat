@@ -34,16 +34,11 @@
 
     <div class="row">
         <div class="col-3 p-5">
-        $avatar = User::where('avatar', '=', Input::get('avatar'))->first();
+       
 
-        @if ($avatar===null)
             <img id="profilepicture" src='/storage/avatars/{{ $user->id }}/{{$user->avatar}}'
                 class="rounded-circle mt-4" style="width:140px;height:150px;">
         
-        @else
-        <img id="profilepicture" src='/storage/avatars/default/default_Profile.jpg'
-                class="rounded-circle mt-4" style="width:140px;height:150px;">
-                @endif
         </div>
         <div class="col-9 pt-5">
             <div>
